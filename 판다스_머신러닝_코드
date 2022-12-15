@@ -1,0 +1,73 @@
+- 데이콘 및 캐글 대회용 단축 모음
+
+1. 모듈 모음
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import koreanize_matplotlib - matplot 한국어 패치 / %config InlineBackend.figure_format = 'retina' 같이 사용
+import re - 정규표현식
+import tqdm as tqdm - progress_map(), 진행률 볼 수 있는 함수
+from sklearn.feature_extraction.text import CountVectorizer - NLP 카운터 벡터라이저
+from sklearn.feature_extraction.text import TfidfVectorizer - TF-IDF 벡터라이저
+from sklearn.model_selection import train_test_split - train validation 하기
+from sklearn.tree import DecisionTreeClassifier - Decision tree 분류 모델
+from sklearn.tree import DecisionTreeRegressor - Decision tree 회귀 모델
+from sklearn.model_selection import cross_val_predict - cross_vali 모델
+from sklearn.metrics import accuracy_score - 정확도 점수 모듈
+
+
+2. 판다스 로드 및 저장
+
+pd.read_csv("file 경로 및 file name") - 데이터 불러오기
+    csv 자리에 excel과 같이 확장자 변경 가능
+    excel인 경우 encoding="cp949" 확인하기
+
+Dataframe의 이름.to_csv() - 데이터 저장하기
+    불러오는 기능과 같이 여러 확장자 변경 가능
+    () 안에 index=False 적용 시 첫 컬럼 index 값 삭제(대회에서 주로 사용)
+    
+    
+3. EDA
+
+train과 test라는 가정하에 코드 작성
+
+print(train.head())
+print(test.head())
+
+print(train.tail())
+print(test.tail())
+
+print(train.info())
+print(test.info())
+
+print(train.describe())
+print(test.describe())
+
+print(train.shape)
+print(test.shape)
+
+train.drop(columns=)
+
+train[""].hist();
+
+
+4. 데이터 전처리
+
+train[""].map(lambda x : x.lower()) - 소문자 처리
+train[""].map(lambda x : re.sub("[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9]", "", x)) - 한글, 영어, 숫자 제외 모두 삭제
+train[""].map(lambda x : re.sub("[\s]", " ", x)) - 공백 하나만 만들기
+train[""].fillna(0) - 결측치 전부 0 처리
+train[""].fillna(method='ffill') - 결측치 앞의 값으로 처리
+train[""].fillna(method='bfill') - 결측치 뒤의 값으로 처리
+train[""].fillna(train[""].mean()) - 결측치 평균값으로 처리
+train.reset_index(drop=True) - 인덱스 0부터 다시 배열
+pd.get_dummies(train[""]) - 원핫인코딩 / 매우 중요
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, 
+                                                   stratify=y, test_size=0.2)
+X_train.shape, X_test.shape, y_train.shape, y_test.shape
+    위 코드는 train_test_split 사용 방법
+y_predict = cross_val_predict(model, X_train, y_train, cv=5, n_jobs=-1, verbose=1)
+    위 코드는 CV 사용 방법
+
