@@ -64,10 +64,29 @@ train[""].fillna(method='bfill') - 결측치 뒤의 값으로 처리
 train[""].fillna(train[""].mean()) - 결측치 평균값으로 처리
 train.reset_index(drop=True) - 인덱스 0부터 다시 배열
 pd.get_dummies(train[""]) - 원핫인코딩 / 매우 중요
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, 
                                                    stratify=y, test_size=0.2)
 X_train.shape, X_test.shape, y_train.shape, y_test.shape
     위 코드는 train_test_split 사용 방법
+    
 y_predict = cross_val_predict(model, X_train, y_train, cv=5, n_jobs=-1, verbose=1)
     위 코드는 CV 사용 방법
+
+train.duplicated(keep=["first", "last", False]) : 중복치 확인
+train.drop_duplicated(keep=["first", "last", False]) : unique한 값 하나만 남기고 중복값 삭제
+    keep 값의 default는 "first"
+    "first" : 중복값 중 첫번째 값을 duplicated
+    "last" : 중복값 중 마지막 값을 duplicated
+    False : 중복값 모두를 duplicated / 삭제
+
+
+
+
+
+
+
+
+
+
 
