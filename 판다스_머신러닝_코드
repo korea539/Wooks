@@ -80,10 +80,9 @@ train.drop_duplicated(keep=["first", "last", False]) : unique한 값 하나만 �
     "last" : 중복값 중 마지막 값을 duplicated
     False : 중복값 모두를 duplicated / 삭제
 
-
-
-
-
+! DataFrame이 아니라 List 데이터의 값들의 종류를 볼 수 있는 코드
+from collections import Counter
+Counter(list) : 리스트의 값의 종류와 개수를 출력(딕셔너리 형식)
 
 
 
