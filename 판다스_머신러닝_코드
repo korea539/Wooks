@@ -84,7 +84,7 @@ train.drop_duplicated(keep=["first", "last", False]) : unique한 값 하나만 �
 from collections import Counter
 Counter(list) : 리스트의 값의 종류와 개수를 출력(딕셔너리 형식)
 
-pass4
+pass5
 
 
 
