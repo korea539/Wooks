@@ -41,3 +41,4 @@ HTML 정리
 - http = Hyper Text Transfer Protocol
 - IPA = Internet Protocol Address
 - IPA 중 127.0.0.1 = 본인 로컬 아이피를 의미(약속)
+- Port = 하나의 컴퓨터에 여러개의 서버가 있음, 각자의 서버는 각자의 포트 번호가 있음
