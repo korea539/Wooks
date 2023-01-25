@@ -1,5 +1,7 @@
 - 데이콘 및 캐글 대회용 단축 모음
 
+! Ctrl + C - 실행 중지
+
 1. 모듈 모음
 
 import pandas as pd
@@ -9,6 +11,7 @@ import matplotlib.pyplot as plt
 import koreanize_matplotlib - matplot 한국어 패치 / %config InlineBackend.figure_format = 'retina' 같이 사용
 import re - 정규표현식
 import tqdm as tqdm - progress_map(), 진행률 볼 수 있는 함수
+import random - 랜덤 모듈
 from sklearn.feature_extraction.text import CountVectorizer - NLP 카운터 벡터라이저
 from sklearn.feature_extraction.text import TfidfVectorizer - TF-IDF 벡터라이저
 from sklearn.model_selection import train_test_split - train validation 하기
