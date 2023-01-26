@@ -12,6 +12,8 @@ import koreanize_matplotlib - matplot 한국어 패치 / %config InlineBackend.f
 import re - 정규표현식
 import tqdm as tqdm - progress_map(), 진행률 볼 수 있는 함수
 import random - 랜덤 모듈
+import requests - 웹 요청 받기 위한 모듈
+from bs4 import BeautifulSoup as bs - BeautifulSoup 크롤링을 위한 모듈, HTML 정리
 from sklearn.feature_extraction.text import CountVectorizer - NLP 카운터 벡터라이저
 from sklearn.feature_extraction.text import TfidfVectorizer - TF-IDF 벡터라이저
 from sklearn.model_selection import train_test_split - train validation 하기
