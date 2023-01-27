@@ -13,6 +13,11 @@ import re - 정규표현식
 import tqdm as tqdm - progress_map(), 진행률 볼 수 있는 함수
 import random - 랜덤 모듈
 import requests - 웹 요청 받기 위한 모듈
+import matplotlib.pyplot as plt - 시각화 도구인 pyplot 모듈
+import plotly.express as px - pyplot 도구 추가 모듈
+import koreanize_matplotlib - pyplot 도구 한글화 모듈
+    ! %config InlineBackend.figure_format = 'retina' 위 모듈 작성 후 왼쪽 코드 따로 작성하여야 함
+from glob import glob - 원하는 경로에서 파일을 가져오는 모듈
 from bs4 import BeautifulSoup as bs - BeautifulSoup 크롤링을 위한 모듈, HTML 정리
 from sklearn.feature_extraction.text import CountVectorizer - NLP 카운터 벡터라이저
 from sklearn.feature_extraction.text import TfidfVectorizer - TF-IDF 벡터라이저
@@ -69,6 +74,8 @@ train[""].fillna(method='bfill') - 결측치 뒤의 값으로 처리
 train[""].fillna(train[""].mean()) - 결측치 평균값으로 처리
 train.reset_index(drop=True) - 인덱스 0부터 다시 배열
 pd.get_dummies(train[""]) - 원핫인코딩 / 매우 중요
+pd.melt(train, id_vars=기준 컬럼, value_vars=밸류로 가져올 컬럼)
+    ! melt는 컬럼값들을 밸류로 가져오기 위한 기능
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, 
                                                    stratify=y, test_size=0.2)
@@ -88,6 +95,28 @@ train.drop_duplicated(keep=["first", "last", False]) : unique한 값 하나만 �
 ! DataFrame이 아니라 List 데이터의 값들의 종류를 볼 수 있는 코드
 from collections import Counter
 Counter(list) : 리스트의 값의 종류와 개수를 출력(딕셔너리 형식)
+
+
+5. 시각화 도구
+
+seaborn
+    sns.barplot(data=train, x=x, y=y); / bar 그래프
+    sns.histplot(data=train, x=x, hue=hue); / hist 그래프 (y값 없음)
+    sns.kdeplot(data=train, x=x, hue=hue); / kde 그래프 (y값 없음, 곡선으로 분포 표현 그래프)
+    sns.relplot(data=train, x=x, y=y); / scatter와 line의 상위호환 느낌
+    sns.scatterplot(data=train, x=x, y=y); / 흩뿌려놓은 것처럼 숫자 데이터를 좌표 표현
+    sns.lineplot(); / 선 그래프
+
+
+
+
+
+
+
+
+
+
+
 
 
 

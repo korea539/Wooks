@@ -211,5 +211,6 @@ input의 다른 주요 속성들
 
 HTTP 상태 코드 정리 사이트 : https://developer.mozilla.org/ko/docs/Web/HTTP/Status
 parsing = 어떤 문장이나 문자열을 분석해서 의미있는 데이터들로 변경하는 것
+API = application programming interface 응용 프로그램 프로그래밍 인터페이스
 
 
