@@ -15,4 +15,16 @@
 </ol>
 </p>
 
-<h2>코드 모음 레파지토리</h2>
+<h1>코드 모음 레파지토리</h1>
+
+<p>
+<h2>학습 참고 사진</h2>
+<li><strong>seaborn 구분 및 종류 (<a href="https://seaborn.pydata.org/tutorial/function_overview.html">출처 : seaborn 공식 홈페이지</a>)</strong></li>
+<img src="https://seaborn.pydata.org/_images/function_overview_8_0.png" width="60%">
+
+
+
+
+
+
+</p>
