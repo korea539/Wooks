@@ -207,6 +207,12 @@ findall() = 정규식과 매치되는 모든 문자열(substring)을 리스트�
 finditer() = 정규식과 매치되는 모든 문자열(substring)을 반복 가능한 객체로 리턴
     findall과 차이점은 finditer로 찾은 값들은 iterable한 값을 가지는 것이고
     그 요소들이 match된 객체들
+    
+re.compile.match("문자열") / match 메서드, 문자열을 정규표현식에 맞춘 후에 알려주는 정보들
+    group() = 매치된 문자열을 리턴 
+    start() = 매치된 문자열의 시작 위치 리턴
+    end() = 매치된 문자열의 끝 위치를 리턴
+    span() = 매치된 문자열의 (시작, 끝)에 해당하는 튜플 
 
 
 # 자주 사용하는 문자 클래스
