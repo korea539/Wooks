@@ -109,7 +109,8 @@ seaborn
     sns.scatterplot(data=train, x=x, y=y); / 흩뿌려놓은 것처럼 숫자 데이터를 좌표 표현
     sns.lineplot(); / 선 그래프
 
-
+matplotly
+    
 
 
 
