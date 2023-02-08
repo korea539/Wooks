@@ -30,6 +30,7 @@ HTML 정리
 	<a href="링크 주소"> = 링크 주소 설정, href(Hypertext Reference)
 	<a href="링크 주소" target="_blank"> = 새 창으로 열기
 	<a href="링크 주소" title="미리보기 글씨"> = 링크에 마우스를 올렸을 때 미리보이는 기능
+- <!--, --> = 내용 무시(파이썬 #과 같음)
 
 - WEB의 원천은 스위스(swiss)
 	1990년대에 개발
