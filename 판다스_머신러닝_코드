@@ -96,6 +96,8 @@ train.drop_duplicated(keep=["first", "last", False]) : unique한 값 하나만 �
 from collections import Counter
 Counter(list) : 리스트의 값의 종류와 개수를 출력(딕셔너리 형식)
 
+pd.set_option('display.max_columns', None) / 판다스로 모든 컬럼을 볼 수 있게 하는 코드
+
 
 5. 시각화 도구
 
@@ -107,11 +109,12 @@ seaborn
     sns.scatterplot(data=train, x=x, y=y); / 흩뿌려놓은 것처럼 숫자 데이터를 좌표 표현
     sns.lineplot(); / 선 그래프
 
+matplotly
+    
 
 
 
-
-
+6. 
 
 
 
