@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="background-color: black; color:white">
     <h1><a href="index.html">WEB</a></h1>
     <div id="grid">
         <ol>
@@ -17,6 +17,26 @@
         </ol>
         <div id="article">
         <h2>JavaScript</h2>
+        <input type="button" value="night" onclick="
+         document.querySelector('body').style.backgroundColor = 'black';
+         document.querySelector('body').style.color = 'white';
+        ">
+        <input type="button" value="day" onclick="
+         document.querySelector('body').style.backgroundColor = 'white';
+         document.querySelector('body').style.color = 'black';
+        ">
+        <input type="button" value="day" onclick="
+            var target = document.querySelector('body');
+            if(this.value === 'day') {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                this.value = 'night'
+            } else {
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                this.value = 'day'
+            }
+        ">
         <p><strong><a href="https://namu.wiki/w/JavaScript" target="_blank" title="JavaScript 나무위키">Ecma International의 프로토타입 기반의 프로그래밍 언어로</a></strong>, 스크립트 언어에 해당된다.<br>
         특수한 목적이 아닌 이상 모든 웹 브라우저에 인터프리터가 내장되어 있다.<br>
         오늘날 HTML, CSS와 함께 웹을 구성하는 요소 중 하나다.<br>
@@ -25,6 +45,20 @@
         <br><br><br>출처 = 나무위키
         </div>
     </div>
+
+    <input type="button" value="day" onclick="
+        var target = document.querySelector('body');
+        if(this.value === 'day') {
+            target.style.backgroundColor = 'white';
+            target.style.color = 'black';
+            this.value = 'night'
+        } else {
+            target.style.backgroundColor = 'black';
+            target.style.color = 'white';
+            this.value = 'day'
+        }
+    ">
+
 </body>
 
 </html>
