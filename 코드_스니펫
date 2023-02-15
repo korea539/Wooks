@@ -328,6 +328,7 @@ def solution(s):
 numpy 모듈
     1. np.gcd(x, y) = x와 y의 최대공약수 
     2. abc
+    3. 
 
 
 
