@@ -50,3 +50,5 @@ JS에서 가장 중요한 라이브러리 = jQuery
 UI = User Interface, 사용자가 시스템을 제어하기 위해서 사용하는 것들
 
 API = Application Programming Interface, 누군가 만들어 놓은 조작 장치
+
+검색해 볼만한 단어 document, DOM(Documents Object Model), window, ajax, cookie, offline web Application, webRTC, speech, webGL, webVR
