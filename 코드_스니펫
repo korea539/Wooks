@@ -286,17 +286,19 @@ print 옵션들
 random.sample(range(start, stop), counts) => 범위 내에서 랜덤한 수들을 counts의 수만큼 추출
 
 
-HTML 코드 정리
+# HTML 코드 정리
 requests 모듈
     requests.get(URL) / 해당 URL의 요청을 받아오는 기능
     requests.text / 받아온 사이트를 text화
     .get_text() / 리스트 안 내용들을 text화
 
 
-bs 모듈
+bs 모듈 (import)
     .select() / 사용할 태그를 선택해서 가져오는 기능(path를 괄호안에 넣어주기)
 
 
+math 모듈 (import math)
+    math.factorial(x) => x(정수)의 팩토리얼 값을 리턴
 
 
 --------------------------------------------------------------------------------------------------------------------
