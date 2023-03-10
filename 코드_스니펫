@@ -380,6 +380,7 @@ numpy 모듈
     9. np.sum(x, axis=0) = 행 간의 합 계산
     10. np.mean(x) = 전체 성분의 평균
     11. x[x, y] = x(2차원)라는 array에서 인덱싱 방법
+    12. np.array(x) = x를 array화 시키기
    
 
 
