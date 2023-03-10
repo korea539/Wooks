@@ -375,6 +375,7 @@ numpy 모듈
     4. np.min(x) = x의 최솟값을 리턴
     5. np.ndarray() = numpy 행렬화
     6. np.zeros(x) = array([0., ... ,0.]) x개만큼의 0. 인 array 생성
+        2차원으로 만드려면 np.zeros((x ,y)) = x는 가로, y는 세로 개수
     7. np.ones(x) = 위와 동일하지만 1. 을 리턴
     8. np.sum(x, axis=1) = 열 간의 합 계산
     9. np.sum(x, axis=0) = 행 간의 합 계산
