@@ -389,3 +389,5 @@ from selenium.webdriver.common.by import By / 셀레니움 By 모듈 불러오�
 from selenium.webdriver.common.keys import Keys / 셀레니움 Keys 모듈 불러오기
 
 
+tkinter 코드
+
