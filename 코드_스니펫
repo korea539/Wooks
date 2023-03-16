@@ -387,6 +387,7 @@ selenium 코드
 from selenium import webdriver / 셀레니움 드라이버 불러오기
 from selenium.webdriver.common.by import By / 셀레니움 By 모듈 불러오기
 from selenium.webdriver.common.keys import Keys / 셀레니움 Keys 모듈 불러오기
+import chromedriver_autoinstaller / 자동적으로 업데이트
 
 
 tkinter 코드
