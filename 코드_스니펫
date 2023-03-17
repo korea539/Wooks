@@ -388,7 +388,10 @@ from selenium import webdriver / 셀레니움 드라이버 불러오기
 from selenium.webdriver.common.by import By / 셀레니움 By 모듈 불러오기
 from selenium.webdriver.common.keys import Keys / 셀레니움 Keys 모듈 불러오기
 import chromedriver_autoinstaller / 자동적으로 업데이트
-
+chromedriver_autoinstaller() / 자동 업데이트 함수
+chrome_options = webdriver.ChromeOptions() / 웹드라이버 변수 설정
+chrome_options.add_argument("--headless") / 창을 띄우지 않고 HTML 파싱 기능
+chrome_options.add_argument("--disable-gpu") / GPU를 사용하지 않는 
 
 tkinter 코드
 
