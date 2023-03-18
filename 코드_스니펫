@@ -141,6 +141,7 @@
 
 28. sorted(iterable) / iterable 객체를 정렬한 후 리스트로 리턴(숫자와 알파벳, 오름차순)
     sorted([3, 2, 1]) => [1, 2, 3]
+    reverse=True를 sorted 함수안에 추가하면 내림차순으로 정렬
 
 29. str(object) / 문자열 형태로 객체 변환 함수
     str(3) => "3"
