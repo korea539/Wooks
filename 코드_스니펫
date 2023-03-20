@@ -401,4 +401,24 @@ chrome_options.add_argument("--headless") / 창을 띄우지 않고 HTML 파싱 
 chrome_options.add_argument("--disable-gpu") / GPU를 사용하지 않는 기능
 
 tkinter 코드
+# tkinter 불러오기 / 단순 import tkinter 사용하면 tk()를 사용할 수 없음
+from tkinter import *
+# 시간 관련 모듈 불러오기
+from datetime import datetime
+import time
 
+
+# 창 생성
+win = Tk()
+
+# 창 크기 설정
+win.geometry("1000x1000")
+
+# 창 제목 설정
+win.title("train")
+
+# 전체 폰트 설정 / "*Font"를 작성하여 폰트 값을 지정하고 뒤에 값으로 설정
+win.option_add("*Font", "맑은고딕 25")
+
+# 전체 창 색깔 지정 / bg="원하는 색깔"
+# win.configure(bg="red")
