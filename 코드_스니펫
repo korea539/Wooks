@@ -445,3 +445,47 @@ btn.config(command=now_time)
 
 # 버튼 배치
 btn.pack(side="bottom")
+
+
+# 입력 명령어 --------------------------------------------------------------------
+
+# 입력창 생성
+ent = Entry(win)
+
+# 입력된 내용 추출
+A_get = ent.get()
+
+# 현재 시간 함수 설정
+def lotto_N():
+    A_get = ent.get()
+    btn2.config(text=A_get)
+
+# 예시를 위한 버튼 생성
+btn2 = Button(win)
+btn2.config(width=30, height=1)
+btn2.config(text="로또 당첨 번호 확인")
+btn2.config(command=lotto_N)
+btn2.pack()
+
+# 입력창 배치
+ent.pack()
+
+# 입력창 보충 내용
+"""
+입력 문자 숨기기
+ent.config(show="*") / 대체하려는 문자열로 수정
+
+입력창 문자열 삽입
+ent.insert(0, "***@***.com") / 대체하려는 문자열로 수정, 첫 번째 파라미터는 0번째 인덱스를 의미
+
+입력창 문자열 삭제
+ent.delete(0, 3) / 0~2번째 문자열 삭제
+
+입력창 클릭시 명령
+ent.bind("<Button-1>", clear) / "<Button-1>"은 좌클릭을 의미, 우클릭은 -2,
+뒤 clear는 claer라는 함수를 의미(따로 만들어야 함)
+def clear(event):
+    ent.delete(0, len(ent.get()))
+"""
+
+
