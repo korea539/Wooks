@@ -422,3 +422,26 @@ win.option_add("*Font", "맑은고딕 25")
 
 # 전체 창 색깔 지정 / bg="원하는 색깔"
 # win.configure(bg="red")
+
+
+# 버튼 명령어 --------------------------------------------------------------------
+
+# 현재 시간 함수 설정
+def now_time():
+    dnow = datetime.now()
+    btn.config(text=dnow)
+
+# 버튼 값 생성
+btn = Button(win)
+
+# 버튼 크기 설정
+btn.config(width=30, height=1)
+
+# 버튼 내용 설정
+btn.config(text="현재 시각")
+
+# 버튼 기능 설정 / 아래 코드는 현재 시각을 나타내는 함수 사용
+btn.config(command=now_time)
+
+# 버튼 배치
+btn.pack(side="bottom")
