@@ -489,3 +489,39 @@ def clear(event):
 """
 
 
+# 라벨 명령어 --------------------------------------------------------------------
+
+# 라벨창 생성
+lab = Label(win)
+
+# 라벨창 내용
+lab.config(text="ID")
+
+# 라벨창 배치
+lab.pack()
+
+# 예시를 위한 입력창과 버튼을 제작
+ent2 = Entry(win)
+# 처음에 입력문자를 미리 넣어놓는 방법
+ent2.insert(0, "아무거나")
+# 버튼을 눌렀을 때, 내용을 지워주는 방법
+# 함수를 만들어 같이 사용
+def clear(event):
+    if ent2.get() == "아무거나":
+        ent2.delete(0, len(ent2.get()))
+ent2.bind("<Button-1>", clear)
+ent2.config(show="*")
+ent2.pack()
+btn3 = Button(win)
+btn3.config(text="로그인")
+btn3.pack()
+
+# 라벨 이미지 불러오기
+lab2 = Label(win)
+img = PhotoImage(file="C:/Crawling/GUI/sele.png", master=win)
+# 이미지를 4분의 1 크기로 줄여주는 기능
+img = img.subsample(2)
+lab2.config(image=img)
+lab2.pack()
+
+
