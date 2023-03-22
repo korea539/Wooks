@@ -350,6 +350,22 @@ del list[인덱스] / 해당 인덱스 위치의 내용을 삭제
 
 for i in reversed(range(x)) / for 문을 원소를 거꾸로 뒤집고 사용
 
+특정 진수 변환을 위해 사용하는 코드 (num은 변환할 숫자, base는 진법 숫자)
+string 모듈로 11진법 이상도 변환이 가능
+import string
+def convert_recur(num, base):
+    number = string.digits + string.ascii_uppercase
+    q, r = divmod(num, base)
+    return convert_recur(q, base) + number[r] if q else number[r]
+
+10진법 아래인 경우는 아래 코드로 작동해도 가능
+def convert_iter(num, base):
+    tmp = ''
+    while num:
+        tmp = str(num%base) + tmp
+        num //= base
+    return tmp
+
 
 --------------------------------------------------------------------------------------------------------------------
 
