@@ -359,12 +359,12 @@ def convert_recur(num, base):
     return convert_recur(q, base) + number[r] if q else number[r]
 
 10진법 아래인 경우는 아래 코드로 작동해도 가능
-def convert_iter(num, base):
-    tmp = ''
-    while num:
-        tmp = str(num%base) + tmp
-        num //= base
-    return tmp
+def solution(n, q):
+    rev_base = ''
+    while n > 0:
+        n, mod = divmod(n, q)
+        rev_base += str(mod)
+    return rev_base[::-1]
 
 
 --------------------------------------------------------------------------------------------------------------------
