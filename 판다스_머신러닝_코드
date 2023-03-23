@@ -114,7 +114,8 @@ matplotly
 
 
 
-6. 
+6. 시리즈와 데이터프레임
+    pd.Dataframe()
 
 
 
