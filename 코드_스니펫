@@ -373,6 +373,11 @@ def solution(n, q):
         rev_base += str(mod)
     return rev_base[::-1]
 
+from itertools import combinations
+my_list = [1, 2, 3, 4, 5]
+comb_list = list(combinations(my_list, 3)) / 조합의 모든 경우를 만들어 주는 combinations 함수
+
+
 
 --------------------------------------------------------------------------------------------------------------------
 
