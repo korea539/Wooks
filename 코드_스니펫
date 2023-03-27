@@ -568,3 +568,6 @@ lab2.pack()
 # place(relx= x, rely=y)로 설정했을 때, x와 y가 0.5라면 0.5의 비율로 버튼이 생성됨
 
 
+
+
+pass
