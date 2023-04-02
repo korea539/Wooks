@@ -211,7 +211,7 @@
     
 46. list.insert(i, x) = list에 x요소를 i번째 인덱스에 추가
     i에 -1을 한다고 해서 맨 뒤로 추가되지 않고 뒤에서 두 번째에 추가
-    맨 뒤에 추가하고 싶다면 i에 len(x)를 
+    맨 뒤에 추가하고 싶다면 i에 len(x)를 대입
     
     
 --------------------------------------------------------------------------------------------------------------------
@@ -390,7 +390,7 @@ from itertools import combinations
 my_list = [1, 2, 3, 4, 5]
 comb_list = list(combinations(my_list, 3)) / 조합의 모든 경우를 만들어 주는 combinations 함수
 
-소수를 구하는 코드
+소수를 구하는 코드 (에라스토테네스의 )
 def prime_numbers(n):
     prime = [True] * (n+1)
     prime[0] = False
