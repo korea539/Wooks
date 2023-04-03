@@ -648,5 +648,48 @@ btn_game.config(text = "시작")
 btn_game.config(command=btn_G)
 btn_game.pack()
 
+# 다양한 위젯 명령어 --------------------------------------------------------------------
 
+# Listbox 여러 리스트를 주고 여러개 선택도 가능
+lb = Listbox(win)
+# lb.config(selectmode="multiple") # 여러개 선택할 수 있게 하는 기능
+lb.insert(0, "1번") # 리스트 추가
+lb.insert(1, "2번")
+lb.insert(2, "3번")
+lb_btn = Button(win)
+lb_btn.config(text="옵션 선택")
+def click():
+    bt_text = lb.curselection()[0] # 현재 리스트박스에 선택된 값을 지정, 리턴값은 튜플 형태
+    lb_lab.config(text=str(bt_text+1)+"번")
+lb_btn.config(command=click)
+lb_btn.pack()
+lb_lab = Label(win)
+lb_lab.pack()
+lb.pack()
+# Checkbutton 여러개 체크할 수 있음
+cv = IntVar() # 체크버튼이 체크됐는지 구분하는 인자
+cb = Checkbutton(win, text="1번", variable=cv) # 버튼에 상태에 따라 cv값이 바뀜, 선택을 하면 cv는 1 / 안하면 0, cv.get()을 사용해서 리턴 받아야 함
+cb.pack()
+# Radiobutton 여러개 중 반드시 하나만 클릭해야함
+rv = IntVar() # 체크버튼이 체크됐는지 구분하는 인자
+rb = Radiobutton(win, text="1번", value=0, variable=rv) # value값을 정하여 여러 버튼을 구분해주기
+rb.pack()
+# Combobox 여러개의 List 중 보통 하나만 선택해야 할 때 사용
+from tkinter.ttk import * # Combobox를 사용하려면 ttk를 불러와야 함 / 예전 모듈이라 글이 이상하게 잡힐수도 있음 / 콤보박스를 사용할 때만 사용
+cb_list = ["1", "2", "3"] # 먼저 사용할 리스트 정의
+cb = Combobox(win)
+cb.config(values=cb_list) # values로 사용할 값 정의
+cb.pack()
+# Spinbox 수량을 변경할 때 사용
+sp = Spinbox(win)
+sp.config(from_=-1, to=5) # from_=정수, to=정수로 config하면 해당 범위 내에서 숫자가 움직임
+sp.pack()
+# Scale 슬라이드 바, 윈도우에서 볼륨 조절할 때 나오는 창
+sc = Scale(win) # 기본적으로 0부터 100까지 세팅(아래가 100) / 가로로 하고 싶다면 config 값으로 orient="horizontal" 지정
+#tickinterval = 10과 같이 적용하면 10의 단위로 쪼개서 보여줌 / lenght = 1000과 같이 적용하면 길이를 1000으로 지정
+sc.pack()
+
+
+# 창 실행
+win.mainloop()
 
