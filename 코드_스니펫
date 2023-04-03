@@ -591,6 +591,62 @@ lab2.pack()
 # place(relx= x, rely=y)로 설정했을 때, x와 y가 0.5라면 0.5의 비율로 버튼이 생성됨
 
 
+# 실행 파일 명령어 --------------------------------------------------------------------
+
+# pyinstaller 사용 (미리 모듈 설치)
+# cmd에 pyinstaller --onefile(이건 하나의 파일로) --noconsole(콘솔창 없이) py파일 이름으로
+
+# Label
+lab_game = Label(win)
+lab_game.config(text = "표적 개수")
+lab_game.pack()
+
+# Entry
+ent_game = Entry(win)
+ent_game.pack
+
+k = 1
+
+def cc():
+    global k
+    if k < num_1:
+        k += 1
+        btnG.destroy()
+        ran_btn()
+    else:
+        fin = datetime.now()
+        dif_sec = (fin-start).total_seconds()
+        btnG.destroy()
+        lab = Label(win)
+        lab.config(text="Clear" + str(dif_sec) + "초")
+        lab.pack(pady=230)
+
+def ran_btn():
+    global btnG
+    btnG = Button(win)
+    btnG.config(bg = "red")
+    btnG.config(command=cc)
+    btnG.config(text=k)
+    btnG.place(relx=random.random(), rely=random.random()) # random.random()은 0부터 1사이의 값을 랜덤으로 추출
+
+def btn_G():
+    global num_1 # 이라고 작성하면 함수 밖에서도 작동
+    global start
+    num_1 = int(ent_game.get())
+    # win.pack_slaves() win에 모든 pack을 리스트로 가져오는 함수(grid와 place도 가능) / [ent_game, lab_game] 이런 형식으로 가져옴
+    for i in win.pack_slaves():
+        i.destroy() # destroy는 삭제의 명령어
+    win.geometry("500x500")
+    # 랜덤한 위치에서 버튼 만들기
+    ran_btn()
+    # 현재 시간 확인
+    start = datetime.now()
+
+# Button
+btn_game = Button(win)
+btn_game.config(text = "시작")
+btn_game.config(command=btn_G)
+btn_game.pack()
 
 
-pass 3
+
