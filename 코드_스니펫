@@ -693,3 +693,5 @@ sc.pack()
 # 창 실행
 win.mainloop()
 
+
+pass 1
