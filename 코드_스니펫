@@ -1,7 +1,7 @@
 기본 내장 함수 (참고 사이트 : https://wikidocs.net/32)
 
 
-1. split / 스플릿 / 문자열을 나누어서 리스트에 담는 기능
+1. split / 스플릿 / 문자열을 나누어서 리스트에 담는 기능 / 다시 값을 지정해야함
     문자열.split(나눌 문자)
     "This,is,split".split(",") => ['This', 'is', 'split']
 
