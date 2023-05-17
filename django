@@ -40,4 +40,17 @@ django 개발 서버 구동 및 웹 사이트 접속
 서버를 중지하기 위해선 Ctrl + C 를 cmd 창에서 누르기
 
 
+django pybo 앱 생성 방법
+cmd에 django-admin startapp pybo
+
+
+URL path 설정시 맨 마지막에 pybo/처럼 끝에 /붙히는 것을 습관화하기
+
+# 아래 코드에서 pybo 줄의 의미는 pybo로 끝나는 페이지를 요청하면 pybo 속 urls.py 파일의 매핑 정보를 읽겠다는 의미
+from django.contrib import admin
+from django.urls import path, include
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('pybo/', include('pybo.urls')),
+]
 
