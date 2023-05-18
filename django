@@ -67,3 +67,5 @@ class Answer(models.Model):
 """
 
 모델이 신규로 생성되면 바로 migration으로는 불가능 / 명령어 python manage.py makemigrations가 필요
+
+migrate 명령을 실행하기 전 실제 어떤 쿼리문이 실행되는지 확인해 볼 수 있는 명령어 python manage.py sqlmigrate pybo 0001
