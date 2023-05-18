@@ -1,48 +1,36 @@
 django
 
-django란?
 
+django란?
 웹 프로그램을 쉽고 빠르게 만들어주는 웹 프레임워크
  
-
 웹 프레임워크란?
-
 웹 프로그램을 만들기 위한 스타터 키트
 쿠키나 세션 처리, 로그인과 로그아웃 기능, 권한 처리와 같은 다양한 기능들을 일일이 만들 필요 없이 이미 탑재된 기능으로 구현 가능
- 
 
 django 의 장점
-
 튼튼한 웹 프레임워크 = 기본적으로 보안 공격을 막아주는 기능 탑재
 무수히 많은 기능이 이미 탑재
 흥미로운 부분이 다양하게 존재(다양한 기능들로 인해)
  
-
 django 설치하기
-
 파이썬 설치 필수
 가상환경 설치
 가상환경 진입한 상태에서 cmd로 pip install django==4.0.3 명령어 작성
 만약 장고 설치하고 마지막에 python.exe -m pip install --upgrade pip 와 같은 알림 문구가 올라온다면 저 명령어 그대로 실행
 설치 완료
  
-
 django 프로젝트 생성
-
 프로젝트를 만들고 싶은 폴더로 경로를 변경한 뒤 django-admin startproject config . 명령어 작성
 맨 뒤에 "." 있는 부분 주의
  
-
 django 개발 서버 구동 및 웹 사이트 접속
-
 이전 단계까지 따라왔다면 python manage.py runserver 명령어 작성
 장고 서버가 마지막에 작성된 http 주소로 생성
 서버를 중지하기 위해선 Ctrl + C 를 cmd 창에서 누르기
 
-
 django pybo 앱 생성 방법
 cmd에 django-admin startapp pybo
-
 
 URL path 설정시 맨 마지막에 pybo/처럼 끝에 /붙히는 것을 습관화하기
 
@@ -54,8 +42,26 @@ urlpatterns = [
     path('pybo/', include('pybo.urls')),
 ]
 
-
 django에서 세팅 값중 BASE_DIR는 프로젝트 디렉터리를 의미(mysite와 같은 폴더)
 
-
 테이블 생성 명령어 python manage.py migrate
+
+model 예시(Field 사용)
+"""
+from django.db import models
+
+
+class Question(models.Model):
+    subject = models.CharField(max_length=200) # CharField(max_length=200) 글자수 제한 200, 제목 항목이여서 설정
+    content = models.TextField() # 이건 본문 내용 항목이라 TextField()를 사용(글자수 제한이 불가능)
+    create_date = models.DateTimeField() # 날짜와 시간에 관계된 속성 DateTimeField()
+
+
+class Answer(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE) # 기존 모델을 속성으로 연결하기 위한 ForeignKey
+    # (Question, on_delete=models.CASCADE)는 Question 클래스를 가져오며 Question이 삭제된다면 같이 삭제되도록 설정
+    content = models.TextField()
+    create_date = models.DateTimeField()
+
+# 장고에서 사용하는 속성(Field)의 타입 알아보기, https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-types
+"""
