@@ -56,3 +56,6 @@ urlpatterns = [
 
 
 django에서 세팅 값중 BASE_DIR는 프로젝트 디렉터리를 의미(mysite와 같은 폴더)
+
+
+테이블 생성 명령어 python manage.py migrate
