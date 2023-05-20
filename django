@@ -69,3 +69,22 @@ class Answer(models.Model):
 모델이 신규로 생성되면 바로 migration으로는 불가능 / 명령어 python manage.py makemigrations가 필요
 
 migrate 명령을 실행하기 전 실제 어떤 쿼리문이 실행되는지 확인해 볼 수 있는 명령어 python manage.py sqlmigrate pybo 0001
+
+장고 셸 실행 명령어 python manage.py shell
+
+셸로 Question 모델 생성
+from pybo.models import Question, Answer
+from django.utils import timezone
+q = Question(subject='pybo가 무엇인가요?', content='pybo에 대해서 알고 싶습니다.', create_date=timezone.now()) / timezone.now() 모델로 현재 일시를 대입할 수 있음
+q.save()
+
+Question 조회 명령어 Question.objects.all()
+
+id 조회 명령어 Question.objects.filter(id=1) / id로 조회하는 것이면 filter 대신 get을 사용해도 가능, filter는 조건에 해당되는 데이터를 모두 리턴
+# get은 무조건 1개의 데이터를 조회할 때 사용
+# Question.objects.filter(subject__contains='장고') 와 같이 filter를 사용해서 조회할 수 있음 / 언더바 2개인 것을 주의
+
+셸을 통해 변수 설정과 Question 수정이 가능 (생성이든 수정이든 꼭 마지막에 .save()를 적용해야 함)
+
+데이터 삭제 명령어 q.delete()
+
