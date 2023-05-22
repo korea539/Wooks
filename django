@@ -88,3 +88,6 @@ id 조회 명령어 Question.objects.filter(id=1) / id로 조회하는 것이면
 
 데이터 삭제 명령어 q.delete()
 
+질문에 대한 답을 주는 명령어 Answer(question=q, content='네 자동으로 생성됩니다.', create_date=timezone.now())
+
+Answer 조회 명령어 q.answer_set.all()
