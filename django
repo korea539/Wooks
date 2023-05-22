@@ -89,3 +89,24 @@ id 조회 명령어 Question.objects.filter(id=1) / id로 조회하는 것이면
 질문에 대한 답을 주는 명령어 Answer(question=q, content='네 자동으로 생성됩니다.', create_date=timezone.now())
 Answer 조회 명령어 q.answer_set.all()
 quit()을 통해 셸을 종료할 수 있음
+
+admin 설정 명령어 python manage.py createsuperuser
+admin.py에서 모델 관리 방법
+"""
+from django.contrib import admin
+from .models import Question
+
+admin.site.register(Question)
+or 아래는 검색기능 추가
+from django.contrib import admin
+from .models import Question
+
+
+class QuestionAdmin(admin.ModelAdmin):
+    search_fields = ['subject']
+
+
+admin.site.register(Question, QuestionAdmin)
+
+"""
+
