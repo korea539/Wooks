@@ -133,3 +133,24 @@ HTML 주요 응답코드 오류
 200 : 성공(OK)
 500 : 서버 오류(Internal Server Error)
 404 : 서버가 요청한 페이지(Resource)를 찾을 수 없음(Not Found)
+
+URL 별칭 매기기
+""" # name= 옵션을 통해 별칭을 매길 
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('<int:question_id>/', views.detail, name='detail'),
+]
+"""
+
+form 태그 바로 밑에 {% csrf_token %} 태그를 항상 위치시켜야 한다.
+
+CSRF란?
+CSRF(cross site request forgery)는 웹 사이트 취약점 공격을 방지를 위해 사용하는 기술이다.
+장고가 CSRF 토큰 값을 세션을 통해 발행하고 웹 페이지에서는 폼 전송시에 해당 토큰을 함께 전송하여 실제 웹 페이지에서 작성된 데이터가 전달되는지를 검증하는 기술이다.
+csrf_token 사용을 위해서는 CsrfViewMiddleware 미들웨어가 필요한데 이 미들웨어는 settings.py의 MIDDLEWARE 항목에 디폴트로 추가되어 있으므로 별도의 설정은 필요 없다.
+
+스타일시트 파일은 장고의 스태틱 디렉터리에 저장해야 한다.
