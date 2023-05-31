@@ -161,6 +161,27 @@ STATICFILES_DIRS = [
 
 html 파일에 {% load static %} 를 처음에 추가해야 CSS 사용 가능 (그래야 {% static ... %}와 같은 기능 사용 가능)
 
+웹 디자인에 도움이 되는 부트스트랩 링크 https://getbootstrap.com/docs/5.1/getting-started/download/
+스타일은 아래 참고
+ https://getbootstrap.com/docs/5.1/getting-started/introduction/
+ https://getbootstrap.com/docs/5.1/components/card/
+
+표준 HTML 폼
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.min.css">
+    <title>Hello, pybo!</title>
+</head>
+<body>
+(... 생략 ...)
+</body>
+</html>
+
+{% extends 'base.html' %} 를 사용하여 간편하게 한번에 CSS 스타일을 수정 가능
+{% block content %} ... {% endblock %} 으로 그 사이트에만 적용할 내용을 넣을 수 있음
 
 
 
